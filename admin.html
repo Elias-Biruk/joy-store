@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c2f">
+  <title>Joy Admin — Store dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="admin.js"></script>
+</head>
+<body class="admin-page">
+  <header class="admin-topbar">
+    <a class="brand" href="index.html">joy<span>.</span></a>
+    <div class="admin-top-label"><span class="status-dot"></span> Store workspace <span class="demo-pill">DEMO</span></div>
+    <a class="view-store-link" href="index.html">View store ↗</a>
+  </header>
+  <main class="admin-layout">
+    <aside class="admin-sidebar">
+      <p class="eyebrow">WORKSPACE</p>
+      <button class="side-link active" data-view="overview"><span>▦</span> Overview</button>
+      <button class="side-link" data-view="products"><span>◇</span> Products</button>
+      <button class="side-link" data-view="orders"><span>☷</span> Orders <span id="nav-order-count" class="nav-count">0</span></button>
+      <div class="sidebar-note"><span class="sidebar-note-icon">!</span><b>Demo mode</b><p>Data is stored in this browser only. Add secure authentication and a backend before using real customer data.</p></div>
+    </aside>
+    <section class="admin-content">
+      <div class="admin-welcome"><div><p class="eyebrow" id="admin-eyebrow">YOUR BUSINESS AT A GLANCE</p><h1 id="admin-title">Overview</h1><p id="admin-subtitle">A quick look at Joy’s products and orders.</p></div><button class="button button-dark admin-add-button" id="top-add-product">+ Add product</button></div>
+      <div id="admin-view"></div>
+    </section>
+  </main>
+
+  <dialog class="admin-dialog" id="product-dialog">
+    <form id="product-form" class="admin-form">
+      <div class="drawer-head"><div><p class="eyebrow">PRODUCT CATALOG</p><h2 id="product-dialog-title">Add product</h2></div><button type="button" class="icon-button" id="close-product-dialog" aria-label="Close">×</button></div>
+      <input type="hidden" name="id">
+      <label>Product name<input name="name" required maxlength="90" placeholder="e.g. Sidama Coffee"></label>
+      <div class="form-row"><label>Category<select name="category" required><option>Honey</option><option>Coffee</option><option>Butter</option><option>Teff</option><option>Jewelry</option><option>Phones</option></select></label><label>Price (ETB)<input name="price" type="number" min="0" step="1" required></label></div>
+      <div class="form-row"><label>Stock quantity<input name="stock" type="number" min="0" step="1" required></label><label>Emoji / icon<input name="icon" maxlength="8" value="📦" required></label></div>
+      <label>Short description<textarea name="description" rows="3" maxlength="240" placeholder="A clear, accurate product description"></textarea></label>
+      <label class="check-label"><input name="active" type="checkbox" checked> Product is visible in the store</label>
+      <button class="button button-dark full-button" type="submit">Save product</button>
+    </form>
+  </dialog>
+  <div class="toast" id="admin-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

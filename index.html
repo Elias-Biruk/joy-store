@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c2f">
+  <meta name="description" content="Shop Ethiopian honey, coffee, butter, teff, jewelry and Android phones with Joy.">
+  <title>Joy — Ethiopian favorites, delivered</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="store.js"></script>
+</head>
+<body class="store-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Joy home">joy<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#shop">Shop</a><a href="#why-joy">Why Joy</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-trigger" id="cart-trigger" aria-label="Open shopping cart">Cart <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GOOD THINGS, FROM ETHIOPIA</p>
+        <h1>Everyday essentials.<br><em>A little more joy.</em></h1>
+        <p class="hero-intro">Discover Ethiopian honey, coffee, butter, teff, jewelry and Android phones—all in one convenient place.</p>
+        <a class="button button-light" href="#shop">Explore the shop <span aria-hidden="true">↗</span></a>
+        <div class="hero-note"><span class="tiny-dot"></span> Serving Addis Ababa</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of honey, coffee, grain and shopping bag">
+        <div class="sun-disc"></div>
+        <div class="art-card art-card-honey"><span>🍯</span><small>PURE HONEY</small></div>
+        <div class="art-card art-card-coffee"><span>☕</span><small>ETHIOPIAN COFFEE</small></div>
+        <div class="art-bag"><span>joy.</span></div>
+        <div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
+      </div>
+    </section>
+
+    <section class="trust-strip" id="why-joy">
+      <div><span class="trust-icon">✓</span><span><b>Clear prices</b><small>Know the cost upfront</small></span></div>
+      <div><span class="trust-icon">⌂</span><span><b>Addis delivery</b><small>Delivery details confirmed</small></span></div>
+      <div><span class="trust-icon">♡</span><span><b>Personal service</b><small>We’re here to help</small></span></div>
+    </section>
+
+    <section class="shop-section section-wrap" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE JOY COLLECTION</p><h2>Find your favorites</h2></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Search products…" aria-label="Search products"></label>
+      </div>
+      <div class="category-tabs" id="category-tabs" aria-label="Filter by category"></div>
+      <p class="results-line" id="results-line">Our current picks</p>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="story-band section-wrap">
+      <div class="story-mark">j.</div>
+      <div><p class="eyebrow">SHOP WITH CONFIDENCE</p><h2>Good products.<br>Clear information.</h2><p>We want every order to feel simple. Product details, delivery costs and payment arrangements should be confirmed before your order is finalized.</p></div>
+    </section>
+
+    <section class="contact-section section-wrap" id="contact">
+      <div><p class="eyebrow">QUESTIONS BEFORE YOU ORDER?</p><h2>Let’s talk.</h2><p>Have a question about stock, phone models, jewelry or delivery? Contact Joy before placing your order.</p></div>
+      <a class="button button-dark" id="contact-link" href="mailto:hello@joy.example">Contact Joy <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand brand-footer" href="#">joy<span>.</span></a><p>Everyday essentials, with a little more joy.</p><small>© <span id="year"></span> Joy. Addis Ababa, Ethiopia.</small><a class="admin-link" href="admin.html">Admin</a></footer>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your cart</h2></div><button class="icon-button" id="close-cart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-summary" id="cart-summary"></div>
+    <button class="button button-dark full-button" id="checkout-button">Continue to checkout</button>
+    <p class="microcopy">Delivery fee and final order details are confirmed before dispatch.</p>
+  </aside>
+
+  <dialog class="checkout-dialog" id="checkout-dialog">
+    <form id="checkout-form" class="checkout-form">
+      <div class="drawer-head"><div><p class="eyebrow">ALMOST THERE</p><h2>Delivery details</h2></div><button type="button" class="icon-button" id="close-checkout" aria-label="Close checkout">×</button></div>
+      <p class="form-note">This demo saves orders on this device only. It does not process payments or send your details to a server.</p>
+      <label>Full name<input name="name" autocomplete="name" required placeholder="Your name"></label>
+      <label>Phone number<input name="phone" type="tel" autocomplete="tel" required placeholder="+251…"></label>
+      <label>Delivery area / neighborhood<input name="area" required placeholder="e.g. Bole, Piassa, Ayertena"></label>
+      <label>Full delivery address<textarea name="address" rows="2" required placeholder="Building, landmark and directions"></textarea></label>
+      <label>Payment method<select name="payment" required><option value="COD">Cash on delivery</option><option value="Online payment (to be enabled)">Online payment (coming soon)</option></select></label>
+      <label>Order note (optional)<textarea name="note" rows="2" placeholder="Preferred delivery time, product questions…"></textarea></label>
+      <div id="checkout-total" class="checkout-total"></div>
+      <button class="button button-dark full-button" type="submit">Place demo order</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
